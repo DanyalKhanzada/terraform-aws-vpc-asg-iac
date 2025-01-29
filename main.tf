@@ -1,6 +1,7 @@
 # Fetch available AWS Availability Zones (AZs)
 data "aws_availability_zones" "available" {}
 
+## **VPC Module
 # Create a VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr  # Defined in variables.tf
@@ -34,3 +35,4 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
   tags = { Name = "dev-igw" }
 }
+
